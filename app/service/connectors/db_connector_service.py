@@ -64,3 +64,22 @@ def get_user_info(user_id: str) -> dict:
     channel.close()
     data_dict = MessageToDict(data, preserving_proto_field_name=True)
     return data_dict
+
+
+def login(login: str, password: str) -> dict:
+    """
+    Method to login user.
+
+    Args:
+        login (str): User login.
+        password (str): User password.
+
+    Returns:
+        dict: User info.
+    """
+    client, channel = _prepare_client()
+    request = db_connector_pb2.LoginData(login=login, password=password)
+    data: db_connector_pb2.UserInfo = client.Login(request)
+    channel.close()
+    data_dict = MessageToDict(data, preserving_proto_field_name=True)
+    return data_dict
