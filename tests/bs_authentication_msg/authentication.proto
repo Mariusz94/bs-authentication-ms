@@ -1,0 +1,22 @@
+syntax = "proto3";
+import "default_msg/default.proto";
+
+service AuthenticationService {
+    rpc Login(LoginData) returns (UserInfo);
+}
+
+
+message LoginData {
+    string login = 1;
+    string password = 2;
+}
+
+
+message UserInfo {
+    string id = 1;
+    string first_name = 2;
+    string last_name = 3;
+    string phone_number = 4;
+    string address = 5;
+    string login = 6;
+}
