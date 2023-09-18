@@ -1,0 +1,12 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.pytest_cache
+
+# Sphinx documentation
+docs/*
+!/docs/conf.py
+!/docs/index.rst
+!/docs/Makefile
+
+venv
+

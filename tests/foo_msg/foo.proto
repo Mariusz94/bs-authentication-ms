@@ -1,0 +1,39 @@
+syntax = "proto3";
+import "default_msg/default.proto";
+
+service FooService {
+    rpc FooMethod1(FooRequest) returns (FooResponse);
+    rpc FooMethod2(FooRequest) returns (Empty);
+    rpc FooMethodDownloadFile(FooFileInfo) returns (stream FooFile) {}
+    rpc FooMethodUploadFile(stream FooFile) returns (FooStatus) {}
+}
+
+message FooRequest {
+    string foo_string_field = 1;
+    repeated string foo_repeated_string_field = 2;
+    int32 foo_int32_field = 3;
+    repeated int32 foo_repeated_int32_field = 4;
+    int64 foo_int64_field = 5;
+    repeated int64 foo_repeated_int64_field = 6;
+    float foo_float_field = 7;
+    repeated float foo_repeated_float_field = 8;
+    bool foo_bool_field = 9;
+    repeated bool foo_repeated_bool_field = 10;
+}
+
+message FooResponse {
+    string foo_response = 1;
+}
+
+message FooFileInfo {
+    string foo_file_name = 1;
+}
+
+message FooFile {
+    string foo_file_name = 1;
+    bytes foo_file = 2;
+}
+
+message FooStatus {
+    string status = 1;
+}

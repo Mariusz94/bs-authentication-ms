@@ -1,0 +1,4 @@
+python-dotenv==1.0.0
+
+grpcio==1.50.0
+grpcio-tools==1.50.0

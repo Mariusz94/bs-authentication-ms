@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+message Empty{}
+
+/*  https://protobuf.dev/programming-guides/style/
+*   https://protobuf.dev/programming-guides/proto3/
+*   Use PascalCase (with an initial capital) for message names – for example, SongServerRequest. 
+*   Use lower_snake_case for field names (including oneof field and extension names) – for example, song_name. */
+
+// line comment
+/*
+* repeated string keys = 1;
+* ...
+* repeated MyMessage accounts = 17;
+* 
+*   enum FooBar {
+*     FOO_BAR_UNSPECIFIED = 0;
+*     FOO_BAR_FIRST_VALUE = 1;
+*     FOO_BAR_SECOND_VALUE = 2;
+*   }
+
+*   service FooService {
+*     rpc GetSomething(GetSomethingRequest) returns (GetSomethingResponse);
+*     rpc ListSomething(ListSomethingRequest) returns (ListSomethingResponse);
+*   } */
